@@ -9,9 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const allowedOrigins = process.env.FRONTEND_URL || "http://localhost:3000" || "*";
+// const allowedOrigins = process.env.FRONTEND_URL || "http://localhost:3000" || "*";
 
-
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
 
 let movies = [];
 let similarity = [];
